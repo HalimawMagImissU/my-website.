@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas gift 🎄💗</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: linear-gradient(
+                135deg,
+                #c9f0dc,
+                #fff0f3,
+                #f8d6df
+            );
+            overflow-x: hidden;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            color: #b51f35;
+            text-shadow: 2px 2px white;
+        }
+
+        .yes-button {
+            background: #198754;
+            border: 2px solid white;
+            border-radius: 12px;
+        }
+
+        .no-button {
+            background: #c62828;
+            border: 2px solid white;
+            border-radius: 12px;
+        }
+
+        /* CAT */
+        .cat-container {
+            position: relative;
+            width: min(270px, 75vw);
+            animation: catFloat 2.5s ease-in-out infinite;
+        }
+
+        .cat {
+            display: block;
+            width: 100%;
+        }
+
+        /* SANTA HAT */
+        .santa-hat {
+            position: absolute;
+            z-index: 5;
+            width: 115px;
+            height: 90px;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-23%) rotate(12deg);
+            pointer-events: none;
+        }
+
+        .hat-body {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            width: 83px;
+            height: 70px;
+            background: #e51e36;
+            border: 3px solid #183947;
+            border-radius: 75% 20% 0 0;
+            clip-path: polygon(0 100%, 25% 25%, 100% 0, 83% 100%);
+        }
+
+        .hat-trim {
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+            width: 100px;
+            height: 20px;
+            background: white;
+            border: 3px solid #183947;
+            border-radius: 50%;
+        }
+
+        .hat-pom {
+            position: absolute;
+            top: -2px;
+            right: 0;
+            width: 23px;
+            height: 23px;
+            background: white;
+            border: 3px solid #183947;
+            border-radius: 50%;
+        }
+
+        /* HEART */
+        .heart {
+            color: #ed789a;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        /* CHRISTMAS DECORATIONS */
+        .decoration {
+            position: fixed;
+            z-index: 1;
+            font-size: 35px;
+            pointer-events: none;
+            animation: decorationFloat 3s ease-in-out infinite;
+        }
+
+        .tree-left {
+            bottom: 12px;
+            left: 12px;
+        }
+
+        .tree-right {
+            bottom: 12px;
+            right: 12px;
+            animation-delay: 1s;
+        }
+
+        .gift-left {
+            bottom: 65px;
+            left: 25px;
+        }
+
+        .gift-right {
+            bottom: 65px;
+            right: 25px;
+            animation-delay: 1.5s;
+        }
+
+        .star-left {
+            top: 12%;
+            left: 12%;
+            color: #d4a017;
+        }
+
+        .star-right {
+            top: 17%;
+            right: 12%;
+            color: #d4a017;
+            animation-delay: 1s;
+        }
+
+        /* SNOW */
+        .snowflake {
+            position: fixed;
+            top: -20px;
+            z-index: 3;
+            color: white;
+            text-shadow: 0 0 5px #9cb6b1;
+            pointer-events: none;
+            animation: snowfall linear forwards;
+        }
+
+        @keyframes catFloat {
+            0%, 100% {
+                translate: 0 0;
+            }
+            50% {
+                translate: 0 -8px;
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                scale: 1;
+            }
+            50% {
+                scale: 1.2;
+            }
+        }
+
+        @keyframes decorationFloat {
+            0%, 100% {
+                translate: 0 0;
+            }
+            50% {
+                translate: 0 -8px;
+            }
+        }
+
+        @keyframes snowfall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                padding: 15px;
+            }
+
+            .cat-container {
+                width: 230px;
+            }
+
+            .decoration {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CHRISTMAS DECORATIONS -->
+    <div class="decoration tree-left">🎄</div>
+    <div class="decoration tree-right">🎄</div>
+
+    <div class="decoration gift-left">🎁</div>
+    <div class="decoration gift-right">🎁</div>
+
+    <div class="decoration star-left">✦</div>
+    <div class="decoration star-right">✧</div>
+
+    <div class="container">
+
+        <h1> Habol tayo sa Pasko? 🎄</h1>
+
+        <div class="buttons">
+            <button
+                class="yes-button"
+                onclick="handleYesClick()">
+                Yes na po, baby! 💚
+            </button>
+
+            <button
+                class="no-button"
+                onclick="handleNoClick()">
+                Ayaw ko😝
+            </button>
+        </div>
+
+        <!-- CHRISTMAS CAT -->
+        <div class="cat-container">
+
+            <div class="heart">♥</div>
+
+            <!-- SANTA HAT -->
+            <div class="santa-hat">
+                <div class="hat-body"></div>
+                <div class="hat-trim"></div>
+                <div class="hat-pom"></div>
+            </div>
+
+            <svg class="cat" viewBox="0 0 240 190"
+                xmlns="http://www.w3.org/2000/svg">
+
+                <!-- Cat ears -->
+                <path
+                    d="M44 65 L57 18 L91 43 Q120 31 149 43 L183 18 L196 67"
+                    fill="#43c7df"
+                    stroke="#183947"
+                    stroke-width="5"
+                    stroke-linejoin="round"/>
+
+                <!-- Inner ears -->
+                <path
+                    d="M59 31 L65 54 L82 43 M177 31 L172 54 L155 43"
+                    fill="#f39ab7"
+                    stroke="#183947"
+                    stroke-width="3"/>
+
+                <!-- Cat head -->
+                <path
+                    d="M34 144 Q18 119 31 88 L45 65
+                    Q61 47 85 52 Q120 39 155 52
+                    Q180 47 196 66 L211 91
+                    Q224 121 206 145 L190 157
+                    Q120 169 50 157 Z"
+                    fill="#43c7df"
+                    stroke="#183947"
+                    stroke-width="5"
+                    stroke-linejoin="round"/>
+
+                <!-- Eyes -->
+                <ellipse
+                    cx="83" cy="91"
+                    rx="5.5" ry="7"
+                    fill="#183947"/>
+
+                <ellipse
+                    cx="157" cy="91"
+                    rx="5.5" ry="7"
+                    fill="#183947"/>
+
+                <!-- Blush -->
+                <g fill="#f28cae">
+                    <circle cx="66" cy="105" r="4"/>
+                    <circle cx="74" cy="108" r="4"/>
+                    <circle cx="166" cy="108" r="4"/>
+                    <circle cx="174" cy="105" r="4"/>
+                </g>
+
+                <!-- Mouth -->
+                <path
+                    d="M103 99 Q120 115 137 99
+                    Q139 121 120 123 Q101 121 103 99Z"
+                    fill="#ed6688"
+                    stroke="#183947"
+                    stroke-width="4"/>
+
+                <!-- White belly -->
+                <path
+                    d="M73 155 Q120 134 167 155
+                    Q151 174 120 172 Q89 172 73 155Z"
+                    fill="#fff8fb"/>
+
+                <!-- Whiskers -->
+                <path
+                    d="M45 116 l-12 4 M48 125 l-11 7
+                    M195 116 l12 4 M192 125 l11 7"
+                    stroke="#183947"
+                    stroke-width="3"
+                    stroke-linecap="round"/>
+
+            </svg>
+        </div>
+
+        <p style="color:#176b45;">
+            🎅 Isang Pasko kasama ka, baby! 💗
+        </p>
+
+    </div>
+
+    <!-- WORKING BUTTONS AND SNOW -->
+    <script src="script.js"></script>
+
+    <script>
+        // Falling Christmas snow
+        function createSnowflake() {
+            const snow = document.createElement("div");
+
+            snow.className = "snowflake";
+            snow.textContent = Math.random() > 0.5 ? "❄" : "❅";
+
+            snow.style.left = Math.random() * 100 + "vw";
+            snow.style.opacity = Math.random() * 0.7 + 0.3;
+            snow.style.fontSize =
+                (Math.random() * 12 + 10) + "px";
+
+            const duration = Math.random() * 5 + 5;
+
+            snow.style.animationDuration = duration + "s";
+
+            document.body.appendChild(snow);
+
+            setTimeout(() => {
+                snow.remove();
+            }, duration * 1000);
+        }
+
+        setInterval(createSnowflake, 300);
+    </script>
+
+</body>
+</html>
